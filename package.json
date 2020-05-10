@@ -1,0 +1,22 @@
+{
+  "name": "ocs-entrance-anims",
+  "version": "1.0.1",
+  "description": "A lightweight package for simple JS entrance animations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenson-digital/ocs-entrance-anims.git"
+  },
+  "keywords": [
+    "animations"
+  ],
+  "author": "Ollie Stevenson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenson-digital/ocs-entrance-anims/issues"
+  },
+  "homepage": "https://github.com/stevenson-digital/ocs-entrance-anims#readme"
+}

@@ -1,6 +1,6 @@
 {
   "name": "ocs-entrance-anims",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight package for simple JS entrance animations",
   "main": "index.js",
   "scripts": {

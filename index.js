@@ -6,4 +6,4 @@ const ocsEntranceAnims = () => {
   window.addEventListener('resize', entranceAnimations.resize(), false)
 }
 
-module.exports.ocsEntranceAnims = ocsEntranceAnims
+export { ocsEntranceAnims }

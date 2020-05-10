@@ -43,12 +43,12 @@ Use custom scss animation classes to acheive your desired entrances. These shoul
 
 ```
 .a-fade-in-up {
-	opacity: 0;
-	animation: fadeInUp 500ms 0s cubic-bezier(0.19,1,0.22,1) forwards;
+  opacity: 0;
+  animation: fadeInUp 500ms 0s cubic-bezier(0.19,1,0.22,1) forwards;
 	
-	@media (max-width: 1024) {
-		opacity: 1;
-	}
+  @media (max-width: 1024) {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {

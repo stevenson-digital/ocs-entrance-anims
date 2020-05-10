@@ -23,6 +23,7 @@ ocsEntranceAnims()
 ```
 
 `data-anim-class` Add your own animation class here
+
 `data-offset` Optional setting, is a px offset from element top to delay the trigger (default 200px)
 
 # Usage (SCSS)
@@ -43,7 +44,7 @@ Use custom scss animation classes to acheive your desired entrances. These shoul
 ```
 .a-fade-in-up {
 	opacity: 0;
-	animation: fadeInUp 500ms 0s cubic-bezier(.19,1,.22,1) forwards;
+	animation: fadeInUp 500ms 0s cubic-bezier(0.19,1,0.22,1) forwards;
 	
 	@media (max-width: 1024) {
 		opacity: 1;

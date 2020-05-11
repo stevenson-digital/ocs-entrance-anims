@@ -1,18 +1,17 @@
 export { entranceAnimations }
 
 const $ = jQuery.noConflict()
-const $window = $(window)
 let scrollZones = {}
 
 const entranceAnimations = {
   init() {
-    if ($('.js-entrance-anim').length && $window.width() > 1024)
-      this.getScrollZones()
+    if (document.querySelector('.js-entrance-anim') && window.innerWidth > 1024)
+      entranceAnimations.getScrollZones()
   },
 
   resize() {
-    if ($('.js-entrance-anim').length && $window.width() > 1024)
-      this.getScrollZones()
+    if (document.querySelector('.js-entrance-anim') && window.innerWidth > 1024)
+      entranceAnimations.getScrollZones()
   },
 
   getCssAsInt($el, attr) {
@@ -21,6 +20,7 @@ const entranceAnimations = {
   },
 
   getScrollZones() {
+    console.log('getScrollZones')
     // Flush scrollZones so that on resize the data is refreshed instead of added to
     scrollZones = {}
 
@@ -49,7 +49,7 @@ const entranceAnimations = {
     $.each(scrollZones, function(index, val) {
       const thisZone = scrollZones[index]
       
-      if (currentScrollY >= (thisZone.top - $window.height()) && !thisZone.triggered) {
+      if (currentScrollY >= (thisZone.top - window.innerHeight) && !thisZone.triggered) {
         // Trigger animation when top of trigger zones comes in at the bottom of the viewport
         thisZone.el.removeClass('u-anim-hidden').addClass(thisZone.animClass)
         thisZone.triggered = true

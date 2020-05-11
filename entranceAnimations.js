@@ -15,28 +15,27 @@ const entranceAnimations = {
   },
 
   getCssAsInt($el, attr) {
-    const int = Math.round(parseInt($el.css(attr).replace('px', '')))
+    const styles = getComputedStyle($el)
+    const int = Math.round(parseInt(styles[attr].replace('px', '')))
     return int
   },
 
   getScrollZones() {
-    console.log('getScrollZones')
     // Flush scrollZones so that on resize the data is refreshed instead of added to
     scrollZones = {}
 
-    let trigger = $('.js-entrance-anim')
+    let triggers = document.querySelectorAll('.js-entrance-anim')
 
-    trigger.each(function(index, val) {
-      const $this = $(this)
-      const marginTop = entranceAnimations.getCssAsInt($this, 'margin-top')
-      const paddingTop = entranceAnimations.getCssAsInt($this, 'padding-top')
+    triggers.forEach(($trigger, index) => {
+      const marginTop = entranceAnimations.getCssAsInt($trigger, 'margin-top')
+      const paddingTop = entranceAnimations.getCssAsInt($trigger, 'padding-top')
       const defaultOffset = marginTop + paddingTop + 200
-      const offset = ($this.attr('data-offset')) ? $this.attr('data-offset') : defaultOffset
+      const offset = ($trigger.getAttribute('data-offset')) ? $trigger.getAttribute('data-offset') : defaultOffset
 
       scrollZones[index] = {
-        el: $this,
-        top: Math.round($this.offset().top + parseInt(offset)),
-        animClass: $this.attr('data-anim-class'),
+        el: $trigger,
+        top: Math.round($trigger.offsetTop + parseInt(offset)),
+        animClass: $trigger.getAttribute('data-anim-class'),
         triggered: false
       }
     })

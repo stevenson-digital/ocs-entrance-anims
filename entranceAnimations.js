@@ -1,6 +1,5 @@
 export { entranceAnimations }
 
-const $ = jQuery.noConflict()
 let scrollZones = {}
 
 const entranceAnimations = {
@@ -42,15 +41,16 @@ const entranceAnimations = {
   },
 
   triggerAnimations(currentScrollY) {
-    if ($('.js-entrance-anim').length < 1 || window.innerWidth <= 1024)
+    if (!document.querySelector('.js-entrance-anim') || window.innerWidth <= 1024)
       return
     
-    $.each(scrollZones, function(index, val) {
+    Object.keys(scrollZones).forEach(index => {
       const thisZone = scrollZones[index]
-      
+
       if (currentScrollY >= (thisZone.top - window.innerHeight) && !thisZone.triggered) {
         // Trigger animation when top of trigger zones comes in at the bottom of the viewport
-        thisZone.el.removeClass('u-anim-hidden').addClass(thisZone.animClass)
+        thisZone.el.classList.remove('u-anim-hidden')
+        thisZone.el.classList.add(thisZone.animClass)
         thisZone.triggered = true
       }
     })

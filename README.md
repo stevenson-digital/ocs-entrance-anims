@@ -1,5 +1,3 @@
-This package is currently jQuery dependant. I will be removing the dependancy over the comnig weeks.
-
 # Instillation
 
 `npm i ocs-entrance-anims --save`
